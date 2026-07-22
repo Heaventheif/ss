@@ -1,0 +1,44 @@
+{
+  "autoUpdate": false,
+  "checkUpdate": {
+    "enabled": false,
+    "install": false,
+    "notifyIfCurrent": false,
+    "packageName": "",
+    "registryUrl": "https://registry.npmjs.org",
+    "timeoutMs": 10000
+  },
+  "mqtt": {
+    "enabled": true,
+    "reconnectInterval": 3600
+  },
+  "autoLogin": false,
+  "apiServer": "",
+  "apiKey": "",
+  "credentials": {
+    "email": "",
+    "password": "",
+    "twofactor": ""
+  },
+  "antiGetInfo": {
+    "AntiGetThreadInfo": false,
+    "AntiGetUserInfo": false
+  },
+  "antiDetection": {
+    "enabled": true,
+    "requestDelayMin": 800,
+    "requestDelayMax": 3000,
+    "userAgentPool": [
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+    ]
+  },
+  "remoteControl": {
+    "enabled": false,
+    "url": "",
+    "token": "",
+    "autoReconnect": true
+  }
+}
