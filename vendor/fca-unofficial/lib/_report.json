@@ -1,0 +1,1253 @@
+{
+  "report": [
+    {
+      "relPath": "app/attach-legacy-api.js",
+      "exportNames": [
+        "attachLegacyApiSurface"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "app/create-client.js",
+      "exportNames": [
+        "createFcaClientFromNamespaces",
+        "createFcaClient"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "app/messenger-bot.js",
+      "exportNames": [
+        "MessengerBot",
+        "createMessengerBot"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "app/messenger-context.js",
+      "exportNames": [
+        "MessengerContext"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "compat/api-registry.js",
+      "exportNames": [
+        "attachClientFacade"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "compat/callbackify.js",
+      "exportNames": [
+        "ensureNodeCallback"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "compat/legacy-promise.js",
+      "exportNames": [
+        "createLegacyPromise"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "core/auth-helpers.js",
+      "exportNames": [
+        "DEFAULT_REGIONS",
+        "createAuthCore"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "core/auth.js",
+      "exportNames": [
+        "setJarFromPairs",
+        "normalizeCookieHeaderString",
+        "loginViaAPI",
+        "tokensViaAPI",
+        "loginAsync",
+        "login",
+        "loginLegacy"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "core/config.js",
+      "exportNames": [
+        "defaultConfig",
+        "resolveConfig",
+        "getConfigPath",
+        "loadConfig",
+        "writeConfigTemplate"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "core/login-helper.impl.js",
+      "exportNames": [],
+      "needsShim": true
+    },
+    {
+      "relPath": "core/login-helper.js",
+      "exportNames": [],
+      "needsShim": true
+    },
+    {
+      "relPath": "core/mqtt.js",
+      "exportNames": [
+        "listenMqtt",
+        "attachMqttCompatibility"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "core/options.js",
+      "exportNames": [
+        "Boolean_Option",
+        "setOptions"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "core/request.js",
+      "exportNames": [
+        "createRequestHelper",
+        "createRequestCore"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "core/state.js",
+      "exportNames": [
+        "createDefaultContext",
+        "createStateStore",
+        "createFcaState",
+        "createApiFacade",
+        "attachThreadUpdater"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "core/thread-info-realtime-sync.js",
+      "exportNames": [
+        "applyThreadInfoRealtimeEvent",
+        "attachThreadInfoRealtimeSync"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "core/update-check.js",
+      "exportNames": [
+        "checkForPackageUpdate",
+        "runConfiguredUpdateCheck"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "database/helpers.js",
+      "exportNames": [
+        "DB_NOT_INIT",
+        "validateId",
+        "validateData",
+        "normalizeAttributes",
+        "normalizePayload",
+        "wrapError"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "database/jsonStore.js",
+      "exportNames": [
+        "JsonCollection"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "database/models/index.js",
+      "exportNames": [],
+      "needsShim": true
+    },
+    {
+      "relPath": "database/mongoStore.js",
+      "exportNames": [
+        "MongoCollection"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "database/threadData.js",
+      "exportNames": [],
+      "needsShim": true
+    },
+    {
+      "relPath": "database/userData.js",
+      "exportNames": [],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/account/account.types.js",
+      "exportNames": [],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/account/commands/add-external-module.js",
+      "exportNames": [
+        "createAddExternalModuleCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/account/commands/change-avatar.js",
+      "exportNames": [
+        "createChangeAvatarCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/account/commands/change-bio.js",
+      "exportNames": [
+        "createChangeBioCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/account/commands/change-blocked-status.js",
+      "exportNames": [
+        "createChangeBlockedStatusCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/account/commands/enable-auto-save-app-state.js",
+      "exportNames": [
+        "createEnableAutoSaveAppStateCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/account/commands/get-current-user-id.js",
+      "exportNames": [
+        "createGetCurrentUserIdCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/account/commands/handle-friend-request.js",
+      "exportNames": [
+        "createHandleFriendRequestCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/account/commands/logout.js",
+      "exportNames": [
+        "createLogoutCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/account/commands/refresh-fb-dtsg.js",
+      "exportNames": [
+        "createRefreshFbDtsgCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/account/commands/set-post-reaction.js",
+      "exportNames": [
+        "createSetPostReactionCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/account/commands/unfriend.js",
+      "exportNames": [
+        "createUnfriendCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/account/index.js",
+      "exportNames": [
+        "createAccountDomain"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/http/commands/http-post.js",
+      "exportNames": [
+        "createHttpPostCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/http/commands/post-form-data.js",
+      "exportNames": [
+        "createPostFormDataCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/http/index.js",
+      "exportNames": [
+        "createHttpDomain"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/http/queries/http-get.js",
+      "exportNames": [
+        "createHttpGetQuery"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/messages/commands/change-thread-color.js",
+      "exportNames": [
+        "createChangeThreadColorCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/messages/commands/change-thread-emoji.js",
+      "exportNames": [
+        "createChangeThreadEmojiCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/messages/commands/delete-message.js",
+      "exportNames": [
+        "createDeleteMessageCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/messages/commands/edit-message.js",
+      "exportNames": [
+        "createEditMessageCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/messages/commands/forward-attachment.js",
+      "exportNames": [
+        "createForwardAttachmentCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/messages/commands/mark-delivered.js",
+      "exportNames": [
+        "createMarkDeliveredCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/messages/commands/mark-read-all.js",
+      "exportNames": [
+        "createMarkReadAllCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/messages/commands/mark-read.js",
+      "exportNames": [
+        "createMarkReadCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/messages/commands/mark-seen.js",
+      "exportNames": [
+        "createMarkSeenCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/messages/commands/send-message.js",
+      "exportNames": [
+        "createSendMessageCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/messages/commands/send-typing-indicator.js",
+      "exportNames": [
+        "createSendTypingIndicatorCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/messages/commands/set-message-reaction.js",
+      "exportNames": [
+        "createSetMessageReactionCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/messages/commands/share-contact.js",
+      "exportNames": [
+        "createShareContactCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/messages/commands/unsend-message.js",
+      "exportNames": [
+        "createUnsendMessageCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/messages/commands/upload-attachment.js",
+      "exportNames": [
+        "createUploadAttachmentCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/messages/index.js",
+      "exportNames": [
+        "createMessagesDomain"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/messages/message.types.js",
+      "exportNames": [],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/messages/queries/get-emoji-url.js",
+      "exportNames": [
+        "createGetEmojiUrlQuery"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/messages/queries/get-message.js",
+      "exportNames": [
+        "createGetMessageQuery"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/messages/queries/get-thread-colors.js",
+      "exportNames": [
+        "createGetThreadColorsQuery",
+        "getThreadColors"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/messages/queries/resolve-photo-url.js",
+      "exportNames": [
+        "createResolvePhotoUrlQuery"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/realtime/emit-auth.js",
+      "exportNames": [],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/realtime/index.js",
+      "exportNames": [
+        "createRealtimeDomain"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/realtime/listener.js",
+      "exportNames": [
+        "createRealtimeListener"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/realtime/middleware.js",
+      "exportNames": [
+        "createRealtimeMiddlewareSystem"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/realtime/parse-delta.js",
+      "exportNames": [],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/scheduler/index.js",
+      "exportNames": [
+        "createSchedulerDomain"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/threads/commands/add-users-to-group.js",
+      "exportNames": [
+        "createAddUsersToGroupCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/threads/commands/change-admin-status.js",
+      "exportNames": [
+        "createChangeAdminStatusCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/threads/commands/change-archived-status.js",
+      "exportNames": [
+        "createChangeArchivedStatusCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/threads/commands/change-group-image.js",
+      "exportNames": [
+        "createChangeGroupImageCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/threads/commands/change-nickname.js",
+      "exportNames": [
+        "createChangeNicknameCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/threads/commands/change-thread-color.js",
+      "exportNames": [
+        "createChangeThreadColorCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/threads/commands/change-thread-emoji.js",
+      "exportNames": [
+        "createChangeThreadEmojiCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/threads/commands/create-new-group.js",
+      "exportNames": [
+        "createCreateNewGroupCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/threads/commands/create-poll.js",
+      "exportNames": [
+        "createCreatePollCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/threads/commands/create-theme-ai.js",
+      "exportNames": [
+        "createCreateThemeAICommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/threads/commands/delete-thread.js",
+      "exportNames": [
+        "createDeleteThreadCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/threads/commands/handle-message-request.js",
+      "exportNames": [
+        "createHandleMessageRequestCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/threads/commands/mute-thread.js",
+      "exportNames": [
+        "createMuteThreadCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/threads/commands/remove-user-from-group.js",
+      "exportNames": [
+        "createRemoveUserFromGroupCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/threads/commands/set-title.js",
+      "exportNames": [
+        "createSetTitleCommand"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/threads/index.js",
+      "exportNames": [
+        "createThreadsDomain"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/threads/queries/get-theme-pictures.js",
+      "exportNames": [
+        "createGetThemePicturesQuery"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/threads/queries/get-thread-colors.js",
+      "exportNames": [
+        "getThreadColors",
+        "createGetThreadColorsQuery"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/threads/queries/get-thread-history.js",
+      "exportNames": [
+        "createGetThreadHistoryQuery"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/threads/queries/get-thread-info.js",
+      "exportNames": [
+        "createGetThreadInfoQuery"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/threads/queries/get-thread-list.js",
+      "exportNames": [
+        "createGetThreadListQuery"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/threads/queries/get-thread-pictures.js",
+      "exportNames": [
+        "createGetThreadPicturesQuery"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/threads/queries/search-for-thread.js",
+      "exportNames": [
+        "createSearchForThreadQuery"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/threads/thread.types.js",
+      "exportNames": [],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/users/index.js",
+      "exportNames": [
+        "createUsersDomain"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/users/queries/get-friends-list.js",
+      "exportNames": [
+        "createGetFriendsListQuery"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/users/queries/get-user-id.js",
+      "exportNames": [
+        "createGetUserIdQuery"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/users/queries/get-user-info-v2.js",
+      "exportNames": [
+        "createGetUserInfoV2Query"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/users/queries/get-user-info.js",
+      "exportNames": [
+        "createGetUserInfoQuery"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/users/shared.js",
+      "exportNames": [
+        "toJSONMaybe",
+        "usernameFromUrl",
+        "pickMeta",
+        "normalizePrimaryActor",
+        "normalizeCometUser",
+        "mergeUserEntry",
+        "toUserInfoEntry",
+        "formatUserIdEntry"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "domains/users/user.types.js",
+      "exportNames": [],
+      "needsShim": true
+    },
+    {
+      "relPath": "func/logAdapter.js",
+      "exportNames": [],
+      "needsShim": true
+    },
+    {
+      "relPath": "func/logger.js",
+      "exportNames": [],
+      "needsShim": true
+    },
+    {
+      "relPath": "index.js",
+      "exportNames": [
+        "createSchedulerDomain",
+        "createHttpDomain",
+        "createAccountDomain",
+        "createUsersDomain",
+        "createRealtimeDomain",
+        "createThreadsDomain",
+        "createMessagesDomain",
+        "attachClientFacade",
+        "MessengerContext",
+        "createMessengerBot",
+        "MessengerBot",
+        "createFcaClient",
+        "runConfiguredUpdateCheck",
+        "checkForPackageUpdate",
+        "attachThreadInfoRealtimeSync",
+        "writeConfigTemplate",
+        "resolveConfig",
+        "loadConfig",
+        "defaultConfig",
+        "createAuthCore",
+        "listenMqtt",
+        "createRequestHelper",
+        "createApiFacade",
+        "createFcaState",
+        "createDefaultContext",
+        "setJarFromPairs",
+        "normalizeCookieHeaderString",
+        "tokensViaAPI",
+        "loginViaAPI",
+        "loginLegacy",
+        "loginAsync",
+        "login"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "remote/remoteClient.js",
+      "exportNames": [
+        "createRemoteClient"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "session/capability-resolver.js",
+      "exportNames": [
+        "resolveThreadEmojiTransport",
+        "resolveMarkAsReadTransport",
+        "assertMqttCapability",
+        "resolveThreadMutationTransport"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "session/session.js",
+      "exportNames": [
+        "getPageID",
+        "getMqttClient",
+        "hasMqttClient",
+        "createSessionView"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "transport/contracts/request.js",
+      "exportNames": [],
+      "needsShim": true
+    },
+    {
+      "relPath": "transport/http/facebook.js",
+      "exportNames": [
+        "getWithLoginCheck",
+        "postWithLoginCheck",
+        "postAndSaveCookies",
+        "postWithSavedCookiesAndLoginCheck",
+        "getAndSaveCookies"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "transport/http/form-data.js",
+      "exportNames": [
+        "postFormDataWithLoginCheck"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "transport/http/graphql.js",
+      "exportNames": [
+        "postGraphql",
+        "postGraphqlBatch"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "transport/http/mercury.js",
+      "exportNames": [
+        "changeReadStatusViaMercury",
+        "markSeenViaMercury",
+        "markDeliveredViaMercury",
+        "markFolderAsReadViaMercury"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "transport/http/shared-photos.js",
+      "exportNames": [
+        "postSharedPhotosRequest"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "transport/http/threads.js",
+      "exportNames": [
+        "changeThreadMuteViaMercury",
+        "setThreadTitleViaHttp",
+        "searchThreadsViaMercury",
+        "changeThreadEmojiViaHttp",
+        "uploadGroupImageViaMercury",
+        "changeArchivedStatusViaMercury",
+        "moveThreadsViaMercury",
+        "deleteThreadsViaMercury"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "transport/http/upload-attachment.js",
+      "exportNames": [
+        "createAttachmentUploadTransport"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "transport/realtime/connect-mqtt.js",
+      "exportNames": [],
+      "needsShim": true
+    },
+    {
+      "relPath": "transport/realtime/get-seq-id.js",
+      "exportNames": [],
+      "needsShim": true
+    },
+    {
+      "relPath": "transport/realtime/ls-requests.js",
+      "exportNames": [
+        "publishLsRequestWithAck"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "transport/realtime/publish.js",
+      "exportNames": [
+        "publishRealtimeMessage"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "transport/realtime/stream.js",
+      "exportNames": [
+        "buildProxy",
+        "buildStream"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "transport/realtime/task-response.js",
+      "exportNames": [],
+      "needsShim": true
+    },
+    {
+      "relPath": "transport/realtime/topics.js",
+      "exportNames": [
+        "topics"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "types/client.js",
+      "exportNames": [],
+      "needsShim": true
+    },
+    {
+      "relPath": "types/core-modules.js",
+      "exportNames": [],
+      "needsShim": true
+    },
+    {
+      "relPath": "types/core.js",
+      "exportNames": [],
+      "needsShim": true
+    },
+    {
+      "relPath": "types/events.js",
+      "exportNames": [],
+      "needsShim": true
+    },
+    {
+      "relPath": "types/index.js",
+      "exportNames": [],
+      "needsShim": true
+    },
+    {
+      "relPath": "types/messaging.js",
+      "exportNames": [],
+      "needsShim": true
+    },
+    {
+      "relPath": "types/scheduler.js",
+      "exportNames": [],
+      "needsShim": true
+    },
+    {
+      "relPath": "types/threads.js",
+      "exportNames": [],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/broadcast.js",
+      "exportNames": [],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/client.js",
+      "exportNames": [
+        "parseAndCheckLogin",
+        "saveCookies",
+        "getAppState"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/constants.js",
+      "exportNames": [
+        "getFrom",
+        "isReadableStream"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/cookies.js",
+      "exportNames": [
+        "saveCookies",
+        "getAppState"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/format/attachment.js",
+      "exportNames": [
+        "_formatAttachment",
+        "formatAttachment"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/format/cookie.js",
+      "exportNames": [
+        "formatCookie"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/format/date.js",
+      "exportNames": [
+        "NUM_TO_MONTH",
+        "NUM_TO_DAY",
+        "formatDate"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/format/decode.js",
+      "exportNames": [
+        "decodeClientPayload"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/format/delta.js",
+      "exportNames": [
+        "getAdminTextMessageType",
+        "formatDeltaEvent",
+        "formatDeltaMessage",
+        "getMentionsFromDeltaMessage",
+        "formatDeltaReadReceipt"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/format/ids.js",
+      "exportNames": [
+        "binaryToDecimal",
+        "generateOfflineThreadingID",
+        "generateThreadingID",
+        "getGUID",
+        "generateTimestampRelative"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/format/index.js",
+      "exportNames": [
+        "getType",
+        "formatID",
+        "padZeros",
+        "arrayToObject",
+        "arrToForm",
+        "getData_Path",
+        "setData_Path",
+        "getPaths",
+        "cleanHTML",
+        "getCurrentTimestamp",
+        "getSignatureID",
+        "generateOfflineThreadingID",
+        "generateThreadingID",
+        "getGUID",
+        "generateTimestampRelative",
+        "formatDate",
+        "presenceEncode",
+        "presenceDecode",
+        "generatePresence",
+        "generateAccessiblityCookie",
+        "formatProxyPresence",
+        "formatPresence",
+        "_formatAttachment",
+        "formatAttachment",
+        "getAdminTextMessageType",
+        "formatDeltaEvent",
+        "formatDeltaMessage",
+        "getMentionsFromDeltaMessage",
+        "formatDeltaReadReceipt",
+        "formatMessage",
+        "formatEvent",
+        "formatHistoryMessage",
+        "formatReadReceipt",
+        "formatRead",
+        "formatTyp",
+        "formatThread",
+        "decodeClientPayload",
+        "formatCookie"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/format/message.js",
+      "exportNames": [
+        "formatMessage",
+        "formatEvent",
+        "formatHistoryMessage"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/format/presence.js",
+      "exportNames": [
+        "presenceEncode",
+        "presenceDecode",
+        "generatePresence",
+        "generateAccessiblityCookie",
+        "formatProxyPresence",
+        "formatPresence"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/format/readTyp.js",
+      "exportNames": [
+        "formatReadReceipt",
+        "formatRead",
+        "formatTyp"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/format/thread.js",
+      "exportNames": [
+        "formatThread"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/format/utils.js",
+      "exportNames": [
+        "getType",
+        "formatID",
+        "padZeros",
+        "arrayToObject",
+        "arrToForm",
+        "getData_Path",
+        "setData_Path",
+        "getPaths",
+        "cleanHTML",
+        "getCurrentTimestamp",
+        "getSignatureID"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/headers.js",
+      "exportNames": [
+        "getHeaders"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/loginParser/autoLogin.js",
+      "exportNames": [
+        "createMaybeAutoLogin"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/loginParser/helpers.js",
+      "exportNames": [
+        "delay",
+        "createEmit",
+        "headerOf",
+        "buildUrl",
+        "formatCookie"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/loginParser/index.js",
+      "exportNames": [
+        "makeParsable",
+        "cleanXssi",
+        "parseAndCheckLogin"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/loginParser/parseAndCheckLogin.js",
+      "exportNames": [
+        "parseAndCheckLogin"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/loginParser/textUtils.js",
+      "exportNames": [
+        "cleanXssi",
+        "makeParsable"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/request/client.js",
+      "exportNames": [
+        "delay",
+        "client",
+        "jar",
+        "setClientProxy"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/request/config.js",
+      "exportNames": [
+        "cfg"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/request/defaults.js",
+      "exportNames": [
+        "makeDefaults"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/request/helpers.js",
+      "exportNames": [
+        "getType",
+        "toStringVal",
+        "isStream",
+        "isBlobLike",
+        "isPairArrayList"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/request/index.js",
+      "exportNames": [
+        "client",
+        "makeDefaults",
+        "setProxy",
+        "jar",
+        "postFormData",
+        "post",
+        "get",
+        "cleanGet"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/request/methods.js",
+      "exportNames": [
+        "cleanGet",
+        "get",
+        "post",
+        "postFormData"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/request/proxy.js",
+      "exportNames": [
+        "setProxy"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/request/retry.js",
+      "exportNames": [
+        "requestWithRetry"
+      ],
+      "needsShim": true
+    },
+    {
+      "relPath": "utils/request/sanitize.js",
+      "exportNames": [
+        "sanitizeHeaderValue",
+        "sanitizeHeaderName",
+        "sanitizeHeaders"
+      ],
+      "needsShim": true
+    }
+  ],
+  "failures": [],
+  "warnings": []
+}
