@@ -105,9 +105,10 @@ function sanitizeName(name) {
 }
 
 // Call backend service with messages and root-level attachment support
-async function callHF(messages, attachment) {
+async function callHF(messages, attachment, prompt) {
   const body = { messages };
   if (attachment) body.attachment = attachment;
+  if (prompt !== undefined && prompt !== null) body.prompt = prompt;
 
   const { data } = await http.post(
     `${getHfBase()}/groq`,
@@ -206,7 +207,7 @@ async function handle(api, event, prompt, registerReply) {
 
   let reply;
   try {
-    reply = await callHF(messages, rootAttachment);
+    reply = await callHF(messages, rootAttachment, prompt.trim());
   } catch (e) {
     console.error("[GROQ→HF]", e.response?.status, e.message?.substring(0, 80));
     errorReporter.report("groq:callHF", e);
