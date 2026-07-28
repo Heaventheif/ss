@@ -1,3 +1,6 @@
+import fs from "fs";
+import os from "os";
+import path from "path";
 import http from "../utils/fetchHttp";
 import mongoose from "mongoose";
 import { getHfBase, getInternalToken } from "../utils/hfClient";
@@ -105,10 +108,11 @@ function sanitizeName(name) {
 }
 
 // Call backend service with messages and root-level attachment support
-async function callHF(messages, attachment, prompt) {
+async function callHF(messages, attachment, prompt, wantsVoice) {
   const body = { messages };
   if (attachment) body.attachment = attachment;
   if (prompt !== undefined && prompt !== null) body.prompt = prompt;
+  if (wantsVoice) body.tts = true;
 
   const { data } = await http.post(
     `${getHfBase()}/groq`,
@@ -116,7 +120,30 @@ async function callHF(messages, attachment, prompt) {
     { timeout: 60000, headers: { "Content-Type": "application/json", "X-Internal-Token": getInternalToken() } }
   );
   if (!data.reply) throw new Error(data.error || "استجابة فارغة");
-  return data.reply;
+  return data;
+}
+
+// Write base64 audio to a temp file and send it as a voice-note attachment.
+async function sendVoiceReply(api, threadID, messageID, audioBase64, format = "wav") {
+  const tmpPath = path.join(
+    os.tmpdir(),
+    `groq-tts-${Date.now()}-${Math.random().toString(36).slice(2)}.${format}`
+  );
+  try {
+    fs.writeFileSync(tmpPath, Buffer.from(audioBase64, "base64"));
+    await new Promise((resolve, reject) =>
+      api.sendMessage(
+        { attachment: fs.createReadStream(tmpPath) },
+        threadID,
+        (err, info) => (err ? reject(err) : resolve(info)),
+        messageID
+      )
+    );
+  } catch (e) {
+    console.warn("[GROQ] Failed to send voice reply:", e.message?.substring(0, 80));
+  } finally {
+    fs.unlink(tmpPath, () => {});
+  }
 }
 
 // Main handler for processing messages, attachments, and sessions
@@ -129,12 +156,14 @@ async function handle(api, event, prompt, registerReply) {
     return global.safeSend(api, "🧹 تم مسح ذاكرة المجموعة.", threadID, null, messageID);
   }
 
+  const wantsVoice = true;
+
   const attachment = detectAttachment(event);
 
   if (!prompt.trim() && !attachment) {
     return global.safeSend(api, 
-      "❓ اكتب سؤالك أو أرسل صورة/صوت/فيديو!\n" +
-      "مثال: .ai2 ما هي عاصمة فرنسا؟\n" +
+      "❓ اكتب سؤالك أو أرسل صورة/صوت/فيديو، وسأرد عليك بصوت 🔊!\n" +
+      "مثال: .ai2 كم ناتج 1+8؟\n" +
       ".ai2 مسح — لمسح ذاكرة المجموعة",
       threadID, null, messageID
     );
@@ -155,7 +184,7 @@ async function handle(api, event, prompt, registerReply) {
       global.safeSend(api, 
         attachment
           ? `⏳ جاري تحليل ${attachment.kind === "image" ? "الصورة 🖼️" : attachment.kind === "audio" ? "الصوت 🎵" : "الفيديو 🎬"}...`
-          : "⏳ جاري المعالجة...",
+          : "⏳ جاري توليد الرد الصوتي 🔊...",
         threadID,
         (err, info) => err ? reject(err) : resolve(info),
         messageID
@@ -205,9 +234,9 @@ async function handle(api, event, prompt, registerReply) {
 
   const messages = [...ctx, userMsg];
 
-  let reply;
+  let result;
   try {
-    reply = await callHF(messages, rootAttachment, prompt.trim());
+    result = await callHF(messages, rootAttachment, prompt.trim(), wantsVoice);
   } catch (e) {
     console.error("[GROQ→HF]", e.response?.status, e.message?.substring(0, 80));
     errorReporter.report("groq:callHF", e);
@@ -216,8 +245,17 @@ async function handle(api, event, prompt, registerReply) {
       : "❌ الخادم غير متاح حالياً، حاول لاحقاً.";
     return updateStatus(msg);
   }
+  const reply = result.reply;
 
-  await updateStatus(reply);
+  if (result.audio) {
+    await updateStatus("✅");
+    await sendVoiceReply(api, threadID, messageID, result.audio, result.audio_format || "wav");
+  } else {
+    // TTS unavailable — fall back to showing the text answer so the user isn't left with nothing.
+    await updateStatus(
+      (result.tts_error ? "⚠️ تعذّر توليد الصوت، إليك الرد نصياً:\n\n" : "") + reply
+    );
+  }
 
   if (statusMsgId && registerReply) {
     registerReply(statusMsgId, { author: senderID }, async ({ api, event }) => {
@@ -243,8 +281,8 @@ export default {
     category: "ذكاء اصطناعي",
     description: "محادثة ذكية جماعية مع دعم التوجيه المتعدد للنماذج عبر Groq",
     usage: [
-      "{pn}دردشة4 <سؤالك> — محادثة نصية عادية",
-      "{pn}دردشة4 + صورة/صوت/فيديو مرفق — تحليل الوسائط",
+      "{pn}دردشة4 <سؤالك> — يرد البوت برسالة صوتية 🔊",
+      "{pn}دردشة4 + صورة/صوت/فيديو مرفق — تحليل الوسائط والرد بصوت",
       "{pn}دردشة4 مسح — مسح ذاكرة المحادثة الجماعية",
     ],
   },
